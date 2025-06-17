@@ -2,6 +2,7 @@ import express from "express";
 import dbOptions from "./config/dbconfig.js";
 import router from "./routes/rutas.js";
 import cors from "cors";
+import loginRoutes from "./login/loginRoutes.js";
 
 const app = express();
 const PORT = 3000;
@@ -15,7 +16,7 @@ const PORT = 3000;
     console.error("Connection error:", error);
   }
  
-
+ 
 //connectDB();
 
 // Middlewares
@@ -24,6 +25,8 @@ app.use(express.json());
 
 // Rutas
 app.use("/products", router);
+
+app.use("/", loginRoutes);  // Rutas de login/register
 
 // Iniciar servidor
 app.listen(PORT, () => console.log(`Server running at port ${PORT}`));

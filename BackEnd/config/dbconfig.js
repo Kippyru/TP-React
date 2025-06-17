@@ -27,8 +27,6 @@ const dbOptions =  new Sequalize('rodocion', 'root', "", {
   });
 }); */
 
-app.listen(PORT, () => {
-  console.log('Servidor Express escuchando en puerto 3000');
-}); 
+
 
 export default dbOptions;
