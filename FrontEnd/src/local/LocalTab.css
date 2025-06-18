@@ -1,0 +1,101 @@
+/* LocalTab.css */
+.localtab-container {
+  padding: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background: transparent;
+  min-height: 100vh;
+}
+
+.localtab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.localtab-header h2 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.filtro-container {
+  padding: 1.5px 1.5px;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  font-size: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.filtro-input {
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+
+}
+
+.admin-btn {
+  background-color: #4a47a3;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1rem;
+  margin: 10px;
+}
+
+.admin-btn:hover {
+  background-color: #3734a5;
+}
+
+/* Grid para las tarjetas */
+.card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+/* Tarjeta individual */
+.local-card {
+  background: white;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 10px;
+  box-shadow: 5px 4px 12px hsla(0, 0%, 0%, 0.1);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.local-card:hover {
+  transform: translateY(-5px);
+}
+
+.local-card h3 {
+  margin-top: 0;
+  color: #2e2e2e;
+}
+
+.local-card p {
+  margin: 0.2rem 0;
+  color: #555;
+}
+
+/* Responsive ajustes */
+@media (max-width: 600px) {
+  .localtab-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-btn {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}

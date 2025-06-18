@@ -1,0 +1,123 @@
+/* PlanetSearch.css */ 
+.container {
+    height: 120vh;
+    background: transparent; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: sans-serif;
+    padding-top: 0px;
+}
+
+.planet {
+    width: 200px;
+    height: auto;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+    z-index: 2;
+}
+
+.move-left {
+    transform: translateX(-100px);
+}
+
+.search-bar {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar input {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    width: 250px;
+}
+
+.search-bar button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #fff;
+    color: #003566;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-bar button:hover {
+    background-color: #e0e0e0;
+}
+
+.info-box {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 400px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+} 
+
+.info-box p {
+    margin: 5px 0;
+}
+
+.info-box h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Animación de entrada */
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animación de salida (arreglalo mas tarde) */
+.fade-out {
+    animation: fadeOut 2s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(-500px);
+    }
+}
+
+.search-button { /*sin usar*/
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.dark-background { /*sin usar*/
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease;
+}

@@ -4,17 +4,38 @@ import db from '../config/dbconfig.js';
 const { DataTypes } = Sequelize;
 
 const Product = db.define('PRODUCTOS', {
-  title: {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
+  ID_COD: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  price: {
-    type: DataTypes.DOUBLE,
+  Localidad: {
+    type: DataTypes.STRING,
     allowNull: false
+  },
+  Pais: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  Region: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
+  Habitantes: {
+    type: DataTypes.INTEGER,
+    allowNull: true
+  },
+  Idiomas: {
+    type: DataTypes.STRING,
+    allowNull: true
   }
 }, {
   freezeTableName: true,
-  timestamps: false // opcional, según si tenés campos createdAt / updatedAt
+  timestamps: false
 });
 
 export default Product;

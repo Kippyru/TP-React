@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-// Rutas para productos
+// manejo de Rutas 
 router.get("/productos", getAll);
 router.get("/productos/:id", getById);
 router.post("/productos", create);

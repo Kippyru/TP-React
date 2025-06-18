@@ -27,7 +27,7 @@ router.post('/login', (req, res) => {
   const users = readUsers();
   const user = users.find(u => u.username === username && u.password === password);
   if (user) {
-    res.json({ success: true });
+    res.json({ success: true, rol: user.rol }); // 👈 devolvemos el rol
   } else {
     res.json({ success: false });
   }
@@ -35,7 +35,7 @@ router.post('/login', (req, res) => {
 
 // Registro
 router.post('/register', (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, rol = "user" } = req.body;
   const users = readUsers();
   const exists = users.find(u => u.username === username);
 
@@ -43,7 +43,7 @@ router.post('/register', (req, res) => {
     return res.json({ success: false, message: 'Usuario ya existe' });
   }
 
-  users.push({ username, password });
+  users.push({ username, password, rol });
   writeUsers(users);
   res.json({ success: true });
 });

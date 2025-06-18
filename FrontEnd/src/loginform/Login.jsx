@@ -10,7 +10,7 @@ const LoginForm = () => {
     });
 
     const [error, setError] = useState('');
-    const navigate = useNavigate(); // <-- Agregamos esto
+    const navigate = useNavigate(); 
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -36,10 +36,15 @@ const LoginForm = () => {
             if (data.success) {
                 alert("Inicio de sesión exitoso!");
                 localStorage.setItem("loggedIn", "true");
-                navigate('/Home'); // ⬅️ Redirección al login exitoso
-            } else {
-                setError("Usuario o contraseña incorrectos");
-            }
+                localStorage.setItem("rol", data.rol); // 👈 Guardar rol
+                if (data.rol === "admin") {
+            navigate('/Home'); //  ruta admin
+        } else {
+            navigate('/Home'); // ruta para usuario común
+        }
+    } else {
+        setError("Usuario o contraseña incorrectos");
+    }
         })
         .catch(err => {
             console.error(err);
