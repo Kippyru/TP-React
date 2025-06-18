@@ -1,4 +1,4 @@
-/* PlanetSearch.css */ 
+
 .container {
     height: 120vh;
     background: transparent; 
@@ -20,9 +20,7 @@
     z-index: 2;
 }
 
-.move-left {
-    transform: translateX(-100px);
-}
+
 
 .search-bar {
     margin-top: 0px;
@@ -83,7 +81,7 @@
     color: #fff;
 }
 
-/* Animación de entrada */
+
 .fade-in {
     animation: fadeIn 1s ease forwards;
     opacity: 0;
@@ -95,17 +93,19 @@
     }
 }
 
-/* Animación de salida (arreglalo mas tarde) */
 .fade-out {
-    animation: fadeOut 2s ease forwards;
+    animation: fadeOut 1.2s ease forwards;
+    pointer-events: none; 
+    position: absolute; 
 }
 
 @keyframes fadeOut {
     to {
         opacity: 0;
-        transform: translateX(-500px);
+        transform: translateY(-100px) scale(0.5); 
     }
 }
+
 
 .search-button { /*sin usar*/
   background-color: #007bff;
@@ -120,4 +120,99 @@
 .dark-background { /*sin usar*/
     background-color: rgba(0, 0, 0, 0.5);
     transition: background-color 0.5s ease;
+}
+
+.planet {
+    width: 200px;
+    height: auto;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+    z-index: 2;
+    transform-origin: center center; 
+}
+
+.language-results {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  animation: slideUp 0.5s ease-out;
+  max-width: 600px;
+}
+
+.language-results table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.language-results th, .language-results td {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px;
+  text-align: left;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.move-up {
+  transform: translateY(-20px);
+  transition: transform 0.4s ease;
+}
+
+.language-results {
+  max-height: 700px; 
+  overflow-y: auto;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar {
+  position: sticky;
+  top: 10px;
+  z-index: 10;
+}
+
+.register-button,
+.view-posts-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #00a082;
+}
+
+.view-posts-button {
+  background-color: #0984e3;
+  margin-left: 10px;
+}
+
+.view-posts-button:hover {
+  background-color: #076bc1;
 }

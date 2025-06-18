@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./LocalTab.css";
+import Home from "../inicio/Home";
 
 const LocalTab = () => {
   const [localidades, setLocalidades] = useState([]);
@@ -28,6 +29,8 @@ const LocalTab = () => {
   });
 
   return (
+    <>
+    <Home />
     <div className="localtab-container">
       <div className="localtab-header">
         <h2>Localidades Registradas</h2>
@@ -60,6 +63,7 @@ const LocalTab = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
